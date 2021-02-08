@@ -36,6 +36,7 @@ class Capstone extends Component {
          * as an argument. You need to call setState to set the stockTicker
          * state to the value provided to this function
          */
+        this.setState({ stockTicker });
     }
 
     render() {
@@ -55,7 +56,7 @@ class Capstone extends Component {
          * Both ways you are telling EmptyTickerMessage to display the div with the
          * error message only when the stockTicker state is empty
          */
-        const EmptyTickerMessage = null;
+        const EmptyTickerMessage = isEmpty(this.state.stockTicker) ? (<div>{EMPTY_TICKER_MSG}</div>) : null;
 
         /**
          * 💡 Some things to note below inside the return:
@@ -72,7 +73,7 @@ class Capstone extends Component {
          */
         return (
             <div style={style.container}>
-                <Search onSearch={this.handleSearch} />
+                <Search onSearch={val => this.handleSearch(val)} />
                 <CompanyProfile stockTicker={this.state.stockTicker} />
                 <CompanyFinancial stockTicker={this.state.stockTicker} />
                 {EmptyTickerMessage}
