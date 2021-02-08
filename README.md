@@ -1,3 +1,15 @@
+## Self notes
+- These may be decent exercises for someone starting out in React:
+    - Explanations of features in a similar fashion to the React tutorial
+    - Good comments in code to guide the learner.
+- Likely too easy for anyone w/ React experience:
+    - No advanced concepts (except maybe render props?)
+    - Comments make it easy to turn off thinking.
+    - There are Typescript component files, but it's essentially vanilla JS.
+
+(project's original README follows)
+
+---------------------
 <div style="text-align:center">
     <h1>Welcome to Learn React App!</h1>
 
