@@ -30,7 +30,9 @@ class FancyInput extends Component<any, any> {
      * 🧭  Set the value to the state `inputValue` by calling `setState`
      */
     handleChange(e) {
-
+        this.setState({
+            inputValue: e.target.value
+        })
     }
 
     render() {
@@ -45,7 +47,7 @@ class FancyInput extends Component<any, any> {
                  * onChange event
                  */
                 }
-                <input></input>
+                <input onChange={(e) => this.handleChange(e)}></input>
                 {
                 /**
                  * 💡

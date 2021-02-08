@@ -16,15 +16,16 @@ class Counter extends Component<any, any> {
          * Initialize a state here with initial value of counter set to 0
          * this.state = { counter: defaultValue }
          */
-        this.state = {};
+        this.state = { counter: 0 };
 
         /**
          * 💡
          * We are binding the methods here, don't worry about this right now
          * We will look at why we do this later in the tutorial
          */
-        this.increment = this.increment.bind(this);
-        this.decrement = this.decrement.bind(this);
+        // Commented b/c changed to use arrow fn's
+        // this.increment = this.increment.bind(this);
+        // this.decrement = this.decrement.bind(this);
     }
 
     /**
@@ -43,6 +44,9 @@ class Counter extends Component<any, any> {
          *              return newState
          *      });
          */
+        this.setState(currentState => ({
+            counter: currentState.counter + 1
+        }))
     }
 
     /**
@@ -61,20 +65,23 @@ class Counter extends Component<any, any> {
          *              return newState
          *      });
          */
+        this.setState(currentState => ({
+            counter: currentState.counter - 1
+        }))
     }
 
     render() {
         return (
             <div style={style.container}>
                 <div style={style.buttons}
-                    onClick={this.decrement}>
+                    onClick={() => this.decrement()}>
                     -
                 </div>
                 <div style={style.counter}>
                     {this.state.counter}
                 </div>
                 <div style={style.buttons}
-                    onClick={this.increment}>
+                    onClick={() => this.increment()}>
                     +
                 </div>
             </div>
